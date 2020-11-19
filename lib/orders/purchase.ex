@@ -48,6 +48,24 @@ defmodule Orders.Purchase do
     end
 
   @doc """
+    Gets a list order by establishment
+  """
+  def get_order_by_establishment_id!(id)
+    do
+    query = from orders in Order, where: orders.establishment_id == ^id
+    Repo.all(query)
+  end
+
+  @doc """
+    Gets a list order by month
+  """
+  def get_order_by_month!(date)
+    do
+      query = from(order in Order, where: fragment("date_part('month', ?)", order.inserted_at) <= ^date)
+      Repo.all(query)
+    end
+
+  @doc """
   Creates a order.
 
   ## Examples

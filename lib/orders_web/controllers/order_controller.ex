@@ -46,4 +46,14 @@ defmodule OrdersWeb.OrderController do
     render(conn, "index.json", order: order)
   end
 
+  def getOrderByEstablishment(conn, %{"establishment_id" => id}) do
+    order = Purchase.get_order_by_establishment_id!(id)
+    render(conn, "index.json", order: order)
+  end
+
+  def getOrderByMonth(conn, %{"date" => date}) do
+    order = Purchase.get_order_by_month!(date)
+    render(conn, "index.json", order: order)
+  end
+
 end

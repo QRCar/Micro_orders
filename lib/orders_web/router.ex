@@ -9,6 +9,8 @@ defmodule OrdersWeb.Router do
     pipe_through :api
     resources "/orders", OrderController, except: [:new, :edit]
     get "/orders/by_user/:user_id", OrderController, :getOrderByUser
+    get "/orders/by_month/:date", OrderController, :getOrderByMonth
+    get "/orders/by_establishment/:establishment_id", OrderController, :getOrderByEstablishment
   end
 
   # Enables LiveDashboard only for development

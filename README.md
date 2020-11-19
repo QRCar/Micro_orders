@@ -23,13 +23,15 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 
 http://localhost:4000/api/orders
 
-      order_path  GET     /api/orders                 OrdersWeb.OrderController :index
-      order_path  GET     /api/orders/:id             OrdersWeb.OrderController :show
-      order_path  POST    /api/orders                 OrdersWeb.OrderController :create
-      order_path  PATCH   /api/orders/:id             OrdersWeb.OrderController :update
-                  PUT     /api/orders/:id             OrdersWeb.OrderController :update
-      order_path  DELETE  /api/orders/:id             OrdersWeb.OrderController :delete
-      order_path  GET     /api/cars/by_user/:user_id  OrdersWeb.OrderController :getByUser
+     order_path  GET     /api/orders                                     OrdersWeb.OrderController :index
+     order_path  GET     /api/orders/:id                                 OrdersWeb.OrderController :show
+     order_path  POST    /api/orders                                     OrdersWeb.OrderController :create
+     order_path  PATCH   /api/orders/:id                                 OrdersWeb.OrderController :update
+                 PUT     /api/orders/:id                                 OrdersWeb.OrderController :update
+     order_path  DELETE  /api/orders/:id                                 OrdersWeb.OrderController :delete
+     order_path  GET     /api/orders/by_user/:user_id                    OrdersWeb.OrderController :getOrderByUser
+     order_path  GET     /api/orders/by_month/:date                      OrdersWeb.OrderController :getOrderByMonth
+     order_path  GET     /api/orders/by_establishment/:establishment_id  OrdersWeb.OrderController :getOrderByEstablishment
 
 
   

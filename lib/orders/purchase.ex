@@ -35,7 +35,7 @@ defmodule Orders.Purchase do
       ** (Ecto.NoResultsError)
 
   """
-  def get_order!(id), do: Repo.all(Order, id)
+  def get_order!(id), do: Repo.get(Order, id)
 
 
   @doc """

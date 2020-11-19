@@ -33,14 +33,14 @@ http://localhost:4000/api/orders
   
 ## Post
 
-{
-    "order" :  {
-        "status": "test",
-        "order_identifieur": "zed5a65d6a",
-        "cost": "10.00",
-        "establishment_id": "8a5bb308-f678-4fc6-8bc1-d8c7f61e0793",
-        "user_id": "8a5bb308-f678-4fc6-8bc1-d8c7f61e0793" 
+    {
+        "order" :  {
+            "status": "test",
+            "order_identifieur": "zed5a65d6a",
+            "cost": "10.00",
+            "establishment_id": "8a5bb308-f678-4fc6-8bc1-d8c7f61e0793",
+            "user_id": "8a5bb308-f678-4fc6-8bc1-d8c7f61e0793" 
+        }
     }
-}
 
 

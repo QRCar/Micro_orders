@@ -8,6 +8,7 @@ defmodule OrdersWeb.Router do
   scope "/api", OrdersWeb do
     pipe_through :api
     resources "/orders", OrderController, except: [:new, :edit]
+    get "/orders/by_user/:user_id", OrderController, :getOrderByUser
   end
 
   # Enables LiveDashboard only for development

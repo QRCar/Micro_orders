@@ -35,7 +35,17 @@ defmodule Orders.Purchase do
       ** (Ecto.NoResultsError)
 
   """
-  def get_order!(id), do: Repo.get!(Order, id)
+  def get_order!(id), do: Repo.all(Order, id)
+
+
+  @doc """
+    Gets a list order by user
+  """
+  def get_order_by_user_id!(id)
+    do
+      query = from orders in Order, where: orders.user_id == ^id
+      Repo.all(query)
+    end
 
   @doc """
   Creates a order.

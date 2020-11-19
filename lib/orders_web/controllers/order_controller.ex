@@ -40,4 +40,10 @@ defmodule OrdersWeb.OrderController do
       send_resp(conn, :no_content, "")
     end
   end
+
+  def getOrderByUser(conn, %{"user_id" => id}) do
+    order = Purchase.get_order_by_user_id!(id)
+    render(conn, "index.json", order: order)
+  end
+
 end

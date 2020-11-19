@@ -16,7 +16,7 @@ defmodule OrdersWeb.OrderView do
       status: order.status,
       establishment_id: order.establishment_id,
       user_id: order.user_id,
-      date: order.inserted_at
+      created_at: order.inserted_at
     }
   end
 end

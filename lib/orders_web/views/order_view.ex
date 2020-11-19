@@ -12,8 +12,10 @@ defmodule OrdersWeb.OrderView do
 
   def render("order.json", %{order: order}) do
     %{id: order.id,
-      price: order.price,
+      cost: order.cost,
       status: order.status,
+      establishment_id: order.establishment_id,
+      user_id: order.user_id,
       order_identifieur: order.order_identifieur}
   end
 end

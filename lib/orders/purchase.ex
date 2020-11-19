@@ -9,15 +9,15 @@ defmodule Orders.Purchase do
   alias Orders.Purchase.Order
 
   @doc """
-  Returns the list of orders.
+  Returns the list of order.
 
   ## Examples
 
-      iex> list_orders()
+      iex> list_order()
       [%Order{}, ...]
 
   """
-  def list_orders do
+  def list_order do
     Repo.all(Order)
   end
 

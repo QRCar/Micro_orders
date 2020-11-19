@@ -4,10 +4,12 @@ defmodule Orders.Purchase.Order do
 
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
-  schema "orders" do
-    field :order_identifieur, :string
+  schema "order" do
     field :cost, :string
+    field :establishment_id, Ecto.UUID
+    field :order_identifieur, :string
     field :status, :string
+    field :user_id, Ecto.UUID
 
     timestamps()
   end
@@ -15,7 +17,7 @@ defmodule Orders.Purchase.Order do
   @doc false
   def changeset(order, attrs) do
     order
-    |> cast(attrs, [:order_identifieur, :price, :status])
-    |> validate_required([:order_identifieur, :price, :status])
+    |> cast(attrs, [:cost, :status, :establishment_id, :user_id, :order_identifieur])
+    |> validate_required([:cost, :status, :establishment_id, :user_id, :order_identifieur])
   end
 end

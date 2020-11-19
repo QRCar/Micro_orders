@@ -7,7 +7,7 @@ defmodule OrdersWeb.OrderController do
   action_fallback OrdersWeb.FallbackController
 
   def index(conn, _params) do
-    order = Purchase.list_orders()
+    order = Purchase.list_order()
     render(conn, "index.json", order: order)
   end
 

@@ -5,16 +5,20 @@ defmodule OrdersWeb.OrderControllerTest do
   alias Orders.Purchase.Order
 
   @create_attrs %{
+    cost: "some cost",
+    establishment_id: "7488a646-e31f-11e4-aace-600308960662",
     order_identifieur: "some order_identifieur",
-    price: 120.5,
-    status: "some status"
+    status: "some status",
+    user_id: "7488a646-e31f-11e4-aace-600308960662"
   }
   @update_attrs %{
+    cost: "some updated cost",
+    establishment_id: "7488a646-e31f-11e4-aace-600308960668",
     order_identifieur: "some updated order_identifieur",
-    price: 456.7,
-    status: "some updated status"
+    status: "some updated status",
+    user_id: "7488a646-e31f-11e4-aace-600308960668"
   }
-  @invalid_attrs %{order_identifieur: nil, price: nil, status: nil}
+  @invalid_attrs %{cost: nil, establishment_id: nil, order_identifieur: nil, status: nil, user_id: nil}
 
   def fixture(:order) do
     {:ok, order} = Purchase.create_order(@create_attrs)
@@ -41,9 +45,11 @@ defmodule OrdersWeb.OrderControllerTest do
 
       assert %{
                "id" => id,
+               "cost" => "some cost",
+               "establishment_id" => "7488a646-e31f-11e4-aace-600308960662",
                "order_identifieur" => "some order_identifieur",
-               "price" => 120.5,
-               "status" => "some status"
+               "status" => "some status",
+               "user_id" => "7488a646-e31f-11e4-aace-600308960662"
              } = json_response(conn, 200)["data"]
     end
 
@@ -64,9 +70,11 @@ defmodule OrdersWeb.OrderControllerTest do
 
       assert %{
                "id" => id,
+               "cost" => "some updated cost",
+               "establishment_id" => "7488a646-e31f-11e4-aace-600308960668",
                "order_identifieur" => "some updated order_identifieur",
-               "price" => 456.7,
-               "status" => "some updated status"
+               "status" => "some updated status",
+               "user_id" => "7488a646-e31f-11e4-aace-600308960668"
              } = json_response(conn, 200)["data"]
     end
 

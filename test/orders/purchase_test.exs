@@ -3,12 +3,12 @@ defmodule Orders.PurchaseTest do
 
   alias Orders.Purchase
 
-  describe "orders" do
+  describe "order" do
     alias Orders.Purchase.Order
 
-    @valid_attrs %{order_identifieur: "some order_identifieur", price: 120.5, status: "some status"}
-    @update_attrs %{order_identifieur: "some updated order_identifieur", price: 456.7, status: "some updated status"}
-    @invalid_attrs %{order_identifieur: nil, price: nil, status: nil}
+    @valid_attrs %{cost: "some cost", establishment_id: "7488a646-e31f-11e4-aace-600308960662", order_identifieur: "some order_identifieur", status: "some status", user_id: "7488a646-e31f-11e4-aace-600308960662"}
+    @update_attrs %{cost: "some updated cost", establishment_id: "7488a646-e31f-11e4-aace-600308960668", order_identifieur: "some updated order_identifieur", status: "some updated status", user_id: "7488a646-e31f-11e4-aace-600308960668"}
+    @invalid_attrs %{cost: nil, establishment_id: nil, order_identifieur: nil, status: nil, user_id: nil}
 
     def order_fixture(attrs \\ %{}) do
       {:ok, order} =
@@ -19,9 +19,9 @@ defmodule Orders.PurchaseTest do
       order
     end
 
-    test "list_orders/0 returns all orders" do
+    test "list_order/0 returns all order" do
       order = order_fixture()
-      assert Purchase.list_orders() == [order]
+      assert Purchase.list_order() == [order]
     end
 
     test "get_order!/1 returns the order with given id" do
@@ -31,9 +31,11 @@ defmodule Orders.PurchaseTest do
 
     test "create_order/1 with valid data creates a order" do
       assert {:ok, %Order{} = order} = Purchase.create_order(@valid_attrs)
+      assert order.cost == "some cost"
+      assert order.establishment_id == "7488a646-e31f-11e4-aace-600308960662"
       assert order.order_identifieur == "some order_identifieur"
-      assert order.price == 120.5
       assert order.status == "some status"
+      assert order.user_id == "7488a646-e31f-11e4-aace-600308960662"
     end
 
     test "create_order/1 with invalid data returns error changeset" do
@@ -43,9 +45,11 @@ defmodule Orders.PurchaseTest do
     test "update_order/2 with valid data updates the order" do
       order = order_fixture()
       assert {:ok, %Order{} = order} = Purchase.update_order(order, @update_attrs)
+      assert order.cost == "some updated cost"
+      assert order.establishment_id == "7488a646-e31f-11e4-aace-600308960668"
       assert order.order_identifieur == "some updated order_identifieur"
-      assert order.price == 456.7
       assert order.status == "some updated status"
+      assert order.user_id == "7488a646-e31f-11e4-aace-600308960668"
     end
 
     test "update_order/2 with invalid data returns error changeset" do

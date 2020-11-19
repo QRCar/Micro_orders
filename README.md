@@ -23,12 +23,12 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 
 http://localhost:4000/api/orders
 
-         order_path  GET     /api/orders             OrdersWeb.OrderController :index
-         order_path  GET     /api/orders/:id         OrdersWeb.OrderController :show
-         order_path  POST    /api/orders             OrdersWeb.OrderController :create
-         order_path  PATCH   /api/orders/:id         OrdersWeb.OrderController :update
-                     PUT     /api/orders/:id         OrdersWeb.OrderController :update
-         order_path  DELETE  /api/orders/:id         OrdersWeb.OrderController :delete
+         GET     /api/orders             OrdersWeb.OrderController :index
+         GET     /api/orders/:id         OrdersWeb.OrderController :show
+         POST    /api/orders             OrdersWeb.OrderController :create
+         PATCH   /api/orders/:id         OrdersWeb.OrderController :update
+         PUT     /api/orders/:id         OrdersWeb.OrderController :update
+         DELETE  /api/orders/:id         OrdersWeb.OrderController :delete
 
   
 ## Post
